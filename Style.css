@@ -1,0 +1,1458 @@
+/* Base */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+img { max-width: 100%; height: auto; display: block; }
+h1, h2 { margin: 0 0 .5rem; line-height: 1.2; text-align: left; margin-bottom: 20px;}
+p { margin: 0; }
+
+
+.section-title {
+  text-align: center;
+  font-size: 1.8em;      /* adjust size if needed */
+  font-weight: 600;     
+  margin-top: 80px;      /* space above */
+  padding-top: 80px;
+  margin-bottom: 50px;   /* space below */
+  color: #333;           
+  letter-spacing: 0.5px; 
+}
+
+
+/* Container width */
+.site-header,
+main,
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  flex-direction: column;   
+  align-items: flex-start;
+    padding: 18px 0; 
+  border-bottom: 1px solid #ddd;
+}
+
+/* Brand: logo and title inline */
+#brand {
+   display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px; /* adds space between brand and nav bar */
+}
+#site-title {
+ font-size: 28px;
+  font-weight: 700;
+}
+
+/* Nav horizontal */
+#navigation {
+  width: 100%; /* full width */
+  background-color: #fff2f4; /* very light pink */
+  border-top: 1px solid #f1bfc7;  /* subtle border */
+  border-bottom: 1px solid #f1bfc7;
+  padding: 12px 0;
+}
+#navigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+#navigation a {
+text-decoration: underline;
+  color: #222;
+  font-weight: 500;
+}
+#navigation a:hover
+{
+  text-decoration: none;
+}
+#indicator a {
+  color: #222;
+  
+}
+#indicator {
+  font-size: 0.7em; 
+  font-weight: 600;
+}
+
+
+
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 14px 0 24px;
+}
+
+/* Vision Section */
+
+#vision {
+  padding: 40px 60px;
+}
+
+#vision-title {
+   font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.vision-row {
+  display: grid;
+  grid-template-columns: 1.3fr 260px; 
+  align-items: start; 
+  column-gap: 35px;
+  margin-top: 0; 
+}
+
+.vision-text p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  margin-top: 0;
+ 
+}
+
+.vision-image {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  justify-self: center;
+  opacity: 0.9;
+ margin-top: -60px;
+
+}
+
+
+/* Footer */
+footer { padding: 24px 20px 40px; }
+
+
+
+/* SERVICES SECTION */
+#services {
+  padding: 40px 60px;
+  text-align: center;
+ display:flex; flex-wrap:wrap; gap:32px;
+}
+
+#services-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Card container */
+.services-cards{ 
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: nowrap; 
+  padding-bottom: 10px;
+}
+
+/* Each service card */
+.service{
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for nice interaction */
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Service images */
+.service img ,.catalog img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Service titles */
+.service h3,.catalog h3 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 10px;
+
+}
+
+/* Service text */
+.service p,.catalog p {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* parent card */
+.pilates.card.service {
+  position: relative;   /* needed for absolute positioning inside */
+  overflow: hidden;
+}
+.dance.card.service {
+  position: relative;   /* needed for absolute positioning inside */
+  overflow: hidden;
+}
+
+
+/* hidden info box */
+.pilates-info,.dance-info,.yoga-info {
+  position: absolute;
+  inset: 0;  /* covers the entire card */
+  background: rgba(255, 242, 244, 0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  text-align: center;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Show on hover */
+.dance.card.service:hover .dance-info,
+.pilates.card.service:hover .pilates-info,
+.yoga.card.service:hover .yoga-info {
+  opacity: 1;
+}
+
+/* USERS REVIEWS SECTION */
+#reviews {
+  padding: 40px 60px;
+}
+
+#reviews-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Container for all review cards */
+.review-cards {
+   display:flex;
+  align-items:flex-start;   /* keep text block top-aligned with avatar */
+  gap:12px;
+  margin-bottom:10px;
+}
+
+/* Each individual review box */
+.review {
+  
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover animation */
+.review:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Header inside each review box */
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.review-header img {
+  border-radius: 50%;
+}
+
+.reviewer strong {
+  font-size: 16px;
+  display: block;
+}
+
+
+.rating {
+  color: #f6b400; /* star color */
+  font-size: 16px;
+}
+
+.rate-service {
+  font-size: 14px;
+  color: #555;
+  margin-top: 2px;
+} 
+.reviewer {
+  display:flex;
+  flex-direction:column;
+align-items:flex-start;}
+
+
+/* Review text */
+.review p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+/* ========== HEALTHY LIVING TIPS SECTION ========== */
+#tips {
+  padding: 40px 60px;
+}
+
+#tips-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+
+  text-align: left;
+}
+
+/* Container for all tip boxes */
+.tips-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: nowrap; /* all in one line */
+}
+
+/* Each tip box */
+.tip-box {
+ background-color: #fff2f4;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover animation */
+.tip-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  background-color: #ffecec; /* light pink */
+  padding: 40px 0 25px 0;
+  text-align: center;
+  color: #333;
+  font-size: 15px;
+}
+
+/* main layout */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 15px;
+}
+
+/* title */
+.contact-section h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* email + phone inline */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* each item (icon + text) */
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* icons */
+.contact-row img {
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  border: none;
+}
+
+/* links */
+.contact-row a {
+  color: #333;
+  text-decoration: underline;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.contact-row a:hover {
+  color: #000;
+}
+
+/* copyright */
+.copyright {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+
+/* --- ensures rows of cards --- */
+.catalog {
+  display: flex;
+  flex-wrap: wrap;           /* allow wrapping */
+  justify-content: center;   /* center the rows */
+  gap: 40px;                 /* space between cards */
+  padding: 40px 0;
+}
+
+.product {
+  flex: 0 1 calc(50% - 40px);  /* 2 per row with gap adjustment */
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 20px;
+   width: 70%;        /* reduce or increase this (try 70%, 60%, etc.) */
+  max-width: 450px;  /* add a cap so it doesn’t stretch too wide */
+}
+.sort{
+	display: flex;
+  justify-content: flex-end;  /* moves it to the right */
+  align-items: center;
+  gap: 10px;                  /* space between label and box */
+  margin-bottom: 20px;        /* space below the sort section */
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+/*  GLOBAL BUTTONS STYLES */
+.dashboard-links,
+.customer-links {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  gap: 25px;               
+  margin: 40px auto 60px auto; 
+  text-align: center;
+  width: fit-content;        
+}
+
+/* BUTTONS THAT LINK BETWEEN PAGES */
+.btn-primary {
+  display: inline-block;
+  background: #fff2f4;
+  color: #222;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s, transform 0.1s, box-shadow 0.2s;
+  text-decoration: none;
+  width: 230px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.btn-primary:hover {
+  background: #d3dfc3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* FORM ACTION BUTTONS (FULL WIDTH) */
+input[type="submit"].btn-primary-full {
+  background-color: #fff2f4; /* force the pink background */
+  border: 1px solid #ffd6e3; /* soft pink border to match inputs */
+  color: #222;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s, box-shadow 0.2s;
+}
+
+input[type="submit"].btn-primary-full:hover {
+  background-color: #ffdce1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+input[type="submit"].btn-primary-full:active {
+  background-color: #ffc9d0;
+  transform: translateY(0);
+}
+
+
+
+
+/*  FORMS STYLE */
+.form-card {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 30px 36px;
+  border: 1px solid #ffd6e3;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 22px rgba(0,0,0,.06);
+}
+.form-card label {
+  font-weight: 700;
+  margin-top: 12px;
+  display: block;
+}
+
+.form-card p {
+  text-align: center;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1.5px solid #ffd6e3;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 15px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.form-card textarea { resize: vertical; }
+.form-card input:focus,
+.form-card textarea:focus,
+.form-card select:focus {
+  border-color: #ff9ec4;
+  box-shadow: 0 0 0 4px rgba(255,158,196,.15);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.8em;      /* adjust size if needed */
+  font-weight: 600;     
+  margin-top: 80px;      /* space above */
+  padding-top: 80px;
+  margin-bottom: 50px;   /* space below */
+  color: #333;           
+  letter-spacing: 0.5px; 
+}
+
+.page-title { font-size: 28px; margin: 8px 0 18px; }
+.section-title { font-size: 24px; margin: 20px 0 18px; }
+
+/* IMAGE UPLOAD FIELD */
+.form-card .upload-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+.upload-row img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/*  TABLE STYLE */
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #eaffea;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+}
+
+.table th {
+  background: #ffecec;
+  font-weight: bold;
+}
+
+
+.table tr:hover {
+  background-color: #fff2f4;
+  transition: background 0.2s ease;
+}
+
+.table img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #f5b6c7;
+}
+
+/* Staff section */
+.staff-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.staff-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.staff-container {
+  display: flex;
+  overflow-x:auto;
+  gap: 20px;
+  padding:20px;
+  white-space:nowrap;
+  max-width: 900px;
+  margin: 0 auto; 
+}
+
+.staff-card {
+    flex: 0 0 250px;
+  background: #ffecec; 
+  border: 1px solid #f5b6c7;  
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+.staff-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; 
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.staff-card a {
+  color: #000; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.staff-card h3:hover {
+  text-decoration: none;
+}
+
+
+.staff-card h3 {
+  font-size: 18px;
+  text-decoration: underline;
+  margin:0;
+}
+
+.staff-card p {
+  font-size: 14px;
+    margin:5px 0 0 0;
+
+}
+/* Staff Profile Table */
+.staff-profile-table {
+  width: 80%;           /* not full width */
+  max-width: 900px;     /* keeps it neat */
+  margin: 40px auto;    /* centers the table */
+  border-collapse: collapse;
+  background: #eaffea;       /* white background */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.staff-profile-table th,
+.staff-profile-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.staff-profile-table th {
+  background: #ffecec; /* light pink header */
+  font-weight: bold;
+}
+
+
+
+/* STARS RATING EVALUATION */
+.stars {
+  display: flex;
+  justify-content: center;     
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;              
+  border: 1.5px solid #ffd6e3; 
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  max-width: 520px;
+}
+.stars input {
+  display: none;
+}
+.stars label {
+  font-size: 28px;
+  cursor: pointer;
+  color: #cfcfcf;
+  transition: transform 0.1s ease, color 0.15s ease;
+}
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #f6b400;
+  transform: scale(1.05);
+}
+.stars input:checked ~ label {
+  color: #f6b400;
+}
+
+/* --- Delete  Staff Form  --- */
+.staff-form {
+  border: 1px solid #f5b6c7;
+  border-radius: 8px;
+  padding: 25px 20px;
+  background: #fff;
+}
+
+/* Header row  */
+.staff-header {
+  display: grid;
+  grid-template-columns: 100px 120px 1fr 1fr;
+  text-align: center;
+  font-weight: bold;
+  background: #ffecec;
+  border: 1px solid #ffecec;
+  border-bottom: none;
+  padding: 10px 0;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Staff rows */
+.staff-list {
+  border: 1px solid #ffecec;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+
+.staff-row {
+  display: grid;
+  grid-template-columns: 100px 120px 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #ffecec;
+  background: #eaffea;
+}
+
+
+.staff-row img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #ffecec;
+  background-color: #eaffea;
+}
+
+ 
+  /* Responsive Design — Home Page */
+    
+
+@media (max-width: 768px) {
+
+  /* Navigation links stack vertically */
+  #navigation ul {
+    flex-direction: column;
+    align-items: center;
+   
+  }
+
+ 
+  .vision-row {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+ 
+  .vision-image {
+  position: relative;     
+    margin-top: -60px;      
+    width: 180px;           
+  }
+  
+ .vision-text p {
+    margin-bottom: 100px;    
+  }
+  
+  
+  /* Reviews ,Tips and Services : one card per line */
+  .review-cards,
+  .tips-cards ,
+  .services-cards{
+    flex-direction: column;
+    align-items: center;
+	width:100%;
+  }
+
+ h2{
+    font-size: 22px;
+  }
+
+  /* Footer text smaller and centered */
+  
+  .contact-section {
+    flex-direction: column;     /* stack the title + info vertically */
+    text-align: center;
+   
+  }
+
+  .contact-info {
+    flex-direction: column;     
+    align-items: center;
+  }
+
+  .contact-row {
+    margin-bottom: 12px;
+  }
+
+
+  .copyright {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  
+  #theme-btn {
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+}
+  
+
+
+/*theme button*/
+#themeBtn {
+  background-color: #ffd6e3;
+  color: #222;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 5;
+ 
+
+}
+
+#themeBtn:hover {
+  background: #d3dfc3;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+
+/* ======== DARK MODE ======== */
+body.dark {
+  background-color: #222; 
+  color: #fff;            
+}
+
+
+/*links*/
+body.dark a {
+  color: #f3b2c2;        
+}
+
+/* titles */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4
+{
+  color: #fff ;
+}
+
+/*navigation bar  */
+body.dark #navigation {
+  background-color: #333;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+}
+
+
+
+
+
+/* Cards */
+body.dark .service,
+body.dark .review,
+body.dark .tip-box {
+  background-color: #333;
+  color: #fff;
+  border-color: #666;
+}
+
+/* footer */
+body.dark .site-footer {
+  background-color: #111;
+  color: #fff;
+}
+
+body.dark .contact-row a {
+  color: #ffd6e3;
+}
+/*global text*/
+body.dark p,
+body.dark li,
+body.dark span,
+body.dark div,
+body.dark section,
+body.dark strong,
+body.dark #navigation a ,
+body.dark #indicator a
+{
+  color: #fff ;
+}
+body.dark .pilates-info,body.dark .dance-info,body.dark .yoga-info {
+  position: absolute;
+  inset: 0;  /* covers the entire card */
+  background: #d5b4c9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  text-align: center;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+}
+body.dark #clock{
+	color: #ffcce0;
+}
+
+
+
+
+/* Show on hover */
+.dance.card.service:hover body.dark.dance-info,
+.pilates.card.service:hover body.dark.pilates-info,
+.yoga.card.service:hover body.dark.yoga-info {
+  opacity: 1;
+}
+
+
+ /*Scroll Button in home page*/
+#scrollTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: transparent;
+  z-index: 5;
+  border: none;
+}
+
+#scrollTopBtn img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#scrollTopBtn img:hover {
+  transform: scale(1.1);
+}
+#clock {
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === Phase 3: simple error highlight === */
+.input-error {
+  border-color: red !important;
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.1) !important;
+}
+/* highlight invalid fields on Service Evaluation page */
+.form-error {
+  border-color: #ff4d4f !important;
+  box-shadow: 0 0 0 3px rgba(255, 77, 79, 0.25);
+}
+
+/* simple red highlight class used by JS */
+.input-error {
+  border-color: red !important;
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.1) !important;
+}
+
+/* container that holds the added requests on the Request Service page */
+#requestsContainer {
+  max-width: 650px;
+  margin: 10px auto 60px;
+  padding: 20px 24px;
+  border: 1px dashed #ffd6e3;
+  border-radius: 14px;
+  background: #fffafc;
+  display: none;            /* JS will switch this to block when needed */
+}
+
+#requestsContainer h3 {
+  margin-bottom: 10px;
+}
+
+#requestsContainer ul {
+  padding-left: 20px;
+}
+
+#requestsContainer li {
+  margin-bottom: 12px;
+}
+
+.desc-box {
+  max-height: 80px;      
+  overflow-y: auto;      
+  padding-right: 6px;    
+  white-space: normal;   
+  line-height: 1.4;
+}
+
+
+/* ============================
+   PINK MESSAGE BOX (GLOBAL)
+   ============================ */
+.message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 350px;
+  max-width: 90%;
+  padding: 20px 25px;
+  background: #ffe4ec;
+  border: 2px solid #ffb7ce;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+  text-align: center;
+  font-size: 16px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.message-box.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+/* Buttons inside the message box */
+.message-box-buttons {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.message-box-btn {
+  flex: 1;               
+  max-width: 170px;       
+  background: #ffffff;
+  border: 1.5px solid #ffb7ce;
+  padding: 12px 0;      
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #444;
+  transition: background .2s ease, transform .1s ease;
+  text-align: center;
+}
+
+
+.message-box-btn:hover {
+  background: #ffe4ec;
+  transform: translateY(-2px);
+}
+
+.message-box-btn:active {
+  transform: translateY(0);
+}
+
+/* Dark mode compatibility */
+body.dark .message-box {
+  background: #6f4a5c;
+  border-color: #c58fa5;
+  color: #fff;
+}
+
+body.dark .message-box-btn {
+  background: #fff;
+  color: #333;
+  border-color: #c58fa5;
+}
+
+/* --------------------------
+   DARK MODE — FORM CARD
+---------------------------*/
+body.dark .form-card {
+  background: #333;           
+  border-color: #ffd6e3;         
+  box-shadow: 0 6px 22px rgba(0,0,0,.35);
+}
+
+body.dark .form-card label {
+  color: #fff;                
+}
+
+body.dark .form-card input,
+body.dark .form-card textarea,
+body.dark .form-card select {
+  background: #222;            
+  color: #fff;                 
+  border-color: #ffd6e3;         
+}
+
+body.dark .form-card input:focus,
+body.dark .form-card textarea:focus,
+body.dark .form-card select:focus {
+  border-color: #d48fb1;        
+  box-shadow: 0 0 0 4px rgba(212,143,177,.25);
+}
+
+/* Image preview in forms */
+body.dark .upload-row img {
+  border: 1px solid #999;
+}
+
+body.dark input[type="date"] {
+  color-scheme: dark;
+}
+
+/* DARK MODE — Stars Rating */
+body.dark .stars {
+  background: #333;
+  border: 1.5px solid #555 !important;
+}
+
+body.dark .stars label {
+  color: #777;    
+  background: none !important; 
+}
+
+body.dark .stars label:hover,
+body.dark .stars label:hover ~ label {
+  color: #ffd369 !important;
+}
+
+body.dark .stars input:checked ~ label {
+  color: #ffd369 !important;
+}
+
+
+
+/* ============================
+        DARK MODE
+   ============================ */
+body.dark {
+  background-color: #121212;
+  color: #e6e6e6;
+}
+
+
+/* ----- Staff cards ----- */
+body.dark .staff-card {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #f1f1f1;
+}
+
+body.dark .staff-card a {
+  color: #fff;
+}
+
+body.dark .staff-card h3 {
+  color: #ffe4ec; /* soft pink highlight */
+}
+
+body.dark .staff-card p {
+  color: #ccc;
+}
+
+/* ----- Staff profile table ----- */
+body.dark .staff-profile-table {
+  background: #1d1d1d;
+  border-color: #444;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+body.dark .staff-profile-table th {
+  background: #2a2a2a;
+  color: #f1f1f1;
+}
+
+body.dark .staff-profile-table td {
+  color: #ddd;
+  border-color: #444;
+}
+/* TABLE - Dark Mode  */
+body.dark .table th,
+body.dark .table td {
+  color: #d1d1d1 !important; 
+  border-color: #444;
+}
+
+body.dark .table th {
+  background: #2a2a2a;
+  color: #e6e6e6 !important; 
+}
+
+body.dark .table td {
+  color: #cccccc !important; 
+}
+
+body.dark .table tr:hover {
+  background-color: #333;
+}
+
+
+/* ================================
+   DARK MODE – STAFF LIST 
+   ================================ */
+
+/* Entire row background */
+body.dark .staff-list .staff-row {
+    background: #1b1b1b !important;
+    border-bottom: 1px solid #333;
+}
+
+/* Name + Role text */
+body.dark .staff-list .staff-name,
+body.dark .staff-list .staff-role {
+    color: #e4e4e4 !important;
+}
+
+/* The light green background is coming from a parent div */
+body.dark .staff-list {
+    background: #1b1b1b !important;
+}
+
+/* Checkbox */
+body.dark .staff-list input[type="checkbox"] {
+    accent-color: #d27d99; /* pink checkmark */
+}
+
+/* Images */
+body.dark .staff-list img {
+    border: 1.5px solid #bb6680 !important;
+}
+
+/* Header row (Select / Photo / Name / Role) */
+body.dark .staff-header {
+    background: #2a2a2a !important;
+    border: 1px solid #444 !important;
+}
+
+body.dark .staff-header div {
+    color: #eaeaea !important;
+}
+/* ------------------------------
+      DARK MODE — FORM CARD
+-------------------------------*/
+body.dark .form-card {
+  background: #1b1b1b !important;        /* deeper dark */
+  border: 1px solid #444 !important;     /* subtle border */
+  color: #e6e6e6 !important;
+  box-shadow: 0 6px 22px rgba(0,0,0,.45);
+}
+
+/* Headings */
+body.dark .form-card h3 {
+  color: #f3c4d6 !important;             /* soft pink title */
+}
+
+/* Labels */
+body.dark .form-card label {
+  color: #dcdcdc !important;
+}
+
+/* Inputs, Textareas, Selects */
+body.dark .form-card input,
+body.dark .form-card textarea,
+body.dark .form-card select {
+  background: #262626 !important;        /* clean dark field */
+  color: #eaeaea !important;             /* readable text */
+  border: 1px solid #555 !important;     /* subtle borders */
+}
+
+/* Placeholders */
+body.dark .form-card input::placeholder,
+body.dark .form-card textarea::placeholder {
+  color: #a6a6a6 !important;
+}
+
+/* Focus Styles */
+body.dark .form-card input:focus,
+body.dark .form-card textarea:focus,
+body.dark .form-card select:focus {
+  border-color: #d48fb1 !important;
+  box-shadow: 0 0 0 4px rgba(212,143,177,.25) !important;
+}
+
+/* File Upload Image Preview */
+body.dark .upload-row img {
+  border: 1.5px solid #bb6680 !important; /* match theme */
+}
+
+/* Submit Button */
+body.dark .btn-primary-full {
+  background: #bb6680 !important;
+  color: #fff !important;
+  border: 1px solid #bb6680 !important;
+}
+
+body.dark .btn-primary-full:hover {
+  background: #d27d99 !important;
+}
+
+
+/* ==========================================
+   FINAL DARK MODE 
+========================================== */
+
+/* Staff profile table wrapper */
+body.dark .staff-profile-table {
+    background: #1a1a1a !important;
+    border: 1px solid #444 !important;
+    box-shadow: none !important;
+}
+
+/* Title row */
+body.dark .staff-profile-table tr:first-child td {
+    background: #2a2a2a !important;
+    color: #f3c4d6 !important;
+    font-weight: bold !important;
+}
+
+/* Header row */
+body.dark .staff-profile-table th {
+    background: #2a2a2a !important;
+    color: #eeeeee !important;
+    border-color: #444 !important;
+}
+
+/* Normal cells */
+body.dark .staff-profile-table td {
+    background: #1d1d1d !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+
+/* Lists inside */
+body.dark .staff-profile-table ul,
+body.dark .staff-profile-table li {
+    color: #e0e0e0 !important;
+}
+
+/* Links */
+body.dark .staff-profile-table a {
+    color: #ffbcd4 !important;
+}
+
+body.dark .staff-profile-table a:hover {
+    color: #ffdceb !important;
+}
+
+/* Images */
+body.dark .staff-profile-table img {
+    border: 1.5px solid #bb6680 !important;
+}
+
+/* DARK Requests Container */
+body.dark #requestsContainer {
+  background: #2a2a2a !important;   
+  border-color: #c58fa5 !important; 
+  color: #fff !important;          
+}
+
+
+body.dark #requestsContainer h3 {
+  color: #ffd6e3 !important;        
+}
+
+
+body.dark #requestsContainer li {
+  color: #f1f1f1 !important;
+}
+
+
+body.dark #requestsContainer .desc-box {
+  background: #1f1f1f !important;
+  border: 1px solid #c58fa5 !important;
+  padding: 10px;
+  border-radius: 8px;
+  color: #e6e6e6 !important;
+}

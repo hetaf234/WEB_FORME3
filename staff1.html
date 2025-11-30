@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formé Staff Profile</title>
+  <link rel="stylesheet" href="Style.css">
+  <script src="Script.js" defer></script>
+  
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="top" class="site-header">
+    <div id="brand">
+      <img src="images/Logo.png" alt="Logo" width="150" height="150">
+      <h1 id="site-title">Formé</h1>
+    </div>
+
+    <!-- Navigation bar -->
+    <nav id="navigation">
+      <ul>
+     <li><a href="home.html">Home</a></li>
+        <li><a href="Service_Providers_Dashboard.html">Service Provider’s Dashboard</a></li>
+        <li><a href="Customer_Dashboard.html">Customer’s Dashboard</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="About_Us.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+ <main>
+ 
+
+<nav id="indicator">
+  <a href="home.html">Home</a>&gt; <a href="About_Us.html">About Us</a>&gt; Staff Profile
+</nav>
+  <!-- Staff Section -->
+ 
+    <section class="staff-section">
+      <h2>Staff Profile</h2>
+  <table class="staff-profile-table">
+    <tr style="background:#f5f5f5; font-weight:bold;">
+      <td colspan="7">Sara Al-Qahtani</td>
+    </tr>
+    <tr>
+      <th >Name</th>
+      <th>Photo</th>
+      <th>Email</th>
+      <th>Date of birth</th>
+      <th>Area of Expertise</th>
+      <th>Skills</th>
+      <th>Education</th>
+    </tr>
+    <tr>
+      <!-- Spanning cells -->
+      <td rowspan="3">Sara Al-Qahtani</td>
+      <td rowspan="3"><img src="images/girl1.jpeg" alt="staff1 pic" class="profile-photo" width="100"></td>
+      <td rowspan="3"><a href="mailto:sara@forme.com">sara@forme.com</a></td>
+      <td rowspan="3">05/04/1992</td>
+
+      <!-- Expertise column split into 3 rows -->
+      <td>Pilates – Flexibility</td>
+      <!-- Nested list for Skills -->
+      <td rowspan="3" style="text-align:left;">
+        <ul>
+          <li>Core Strength
+            <ul>
+              <li>Mat Pilates</li>
+              <li>Reformer Pilates</li>
+            </ul>
+          </li>
+          <li>Posture Correction</li>
+        </ul>
+      </td>
+      <!-- Nested list for Education -->
+      <td rowspan="3" style="text-align:left;" >
+        <ul>
+          <li>2010–2014: BSc in Sports Science
+            <ul>
+              <li>GPA: 4.2</li>
+            </ul>
+          </li>
+          <li>2015–2016: Pilates Instructor Certification</li>
+          <li>2018–2020: MSc in Physical Therapy</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Pilates – Balance Training</td>
+    </tr>
+    <tr>
+      <td>Pilates – Strength &amp; Endurance</td>
+    </tr>
+  </table>
+</section>
+
+</main>
+ <footer class="site-footer">
+  <div class="contact-section">
+    <h3>Contact Us:</h3>
+
+    <div class="contact-info">
+      <div class="contact-row">
+        <img src="images/mail-removed.png" alt="Email icon">
+        <a href="mailto:forme@gmail.com">forme@gmail.com</a>
+      </div>
+
+      <div class="contact-row">
+        <img src="images/phone-removed.png" alt="Phone icon">
+        <a href="tel:+966556678127">+966 556678127</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="copyright">&copy; 2025 Formé. All rights reserved.</p>
+</footer>
+</body>
+</html>

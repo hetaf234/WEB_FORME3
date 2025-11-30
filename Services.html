@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Formé Services</title>
+  <link rel="stylesheet" href="Style.css">
+  <script src="Script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="top" class="site-header">
+    <div id="brand">
+      <img src="images/Logo.png" alt="Logo" width="150" height="150">
+      <h1 id="site-title">Formé</h1>
+    </div>
+
+    <!-- Navigation bar -->
+    <nav id="navigation">
+      <ul>
+       <li><a href="home.html">Home</a></li>
+        <li><a href="Service_Providers_Dashboard.html">Service Provider’s Dashboard</a></li>
+        <li><a href="Customer_Dashboard.html">Customer’s Dashboard</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="About_Us.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!--Main-->
+  <main id="Service-main">
+  
+<nav id="indicator"><a href="home.html">Home </a>&gt; Service</nav>
+  
+  <h2 id="Services-title">Services</h2>
+  <!--sort-->
+
+	<div class="sort">
+  <label for="sort">Sort By:</label>
+  <select id="sort">
+  <option value="" disabled select hidden>--Select Sort--</option>
+    <optgroup label="Price">
+      <option value="price-low-high">Low to High</option>
+      <option value="price-high-low">High to Low</option>
+    </optgroup>
+    <optgroup label="Name">
+      <option value="name-az">A – Z</option>
+      <option value="name-za">Z – A</option>
+    </optgroup>
+  </select>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<div class="catalog">
+  <!-- Dancing 30 min -->
+  <article class="product">
+    <div class="card">
+      <img src="images/dance30.png" alt="Dancing Class 30 minutes" >
+    </div>
+    <h3>Dancing Class 30 min</h3>
+    <p>
+      A fun, high-energy session that boosts coordination and rhythm — perfect for anyone who wants to stay active while having fun.
+    </p>
+    <div class="info">
+      <span class="price">15 SAR</span>
+      
+    </div>
+  </article>
+  
+
+  
+  <!-- Dancing 60 min -->
+  <article class="product">
+    <div class="card">
+      <img src="images/dance60.png" alt="Dancing Class 60 minutes" >
+    </div>
+    <h3>Dancing Class 60 min</h3>
+    <p>
+      A full-hour dance experience that improves stamina and balance while letting you express yourself freely through motion and music.
+    </p>
+    <div class="info">
+      <span class="price">30 SAR</span>
+  
+ 
+    </div>
+  </article>
+  <!-- Pilates 45 min -->
+  <article class="product">
+    <div class="card">
+      <img src="images/pilates45.png" alt="Pilates Class 45 minutes" >
+    </div>
+    <h3>Pilates Class 45 min</h3>
+    <p>
+      Focus on strength and control with gentle yet powerful movements that enhance posture, flexibility, and full-body awareness.
+    </p>
+    <div class="info">
+      <span class="price">80 SAR</span>
+    
+    </div>
+  </article>
+
+  <!-- Pilates 90 min -->
+  <article class="product">
+    <div class="card">
+      <img src="images/pilates90.png" alt="Pilates Class 90 minutes" >
+    </div>
+    <h3>Pilates Class 90 min</h3>
+    <p>
+      A deeper, extended session focusing on precision and balance. Ideal for those looking to improve strength, stability, and endurance.
+    </p>
+    <div class="info">
+      <span class="price">160 SAR</span>
+      
+    </div>
+  </article>
+   <!-- Yoga 30 min -->
+  <article class="product">
+    <div class="card">
+      <img src="images/yoga30.png" alt="Yoga Class 30 minutes" >
+    </div>
+    <h3>Yoga Class 30 min</h3>
+    <p>
+      A calm and quick session to relax your body and clear your mind — ideal for busy days when you need a moment of balance.
+    </p>
+    <div class="info">
+      <span class="price">20 SAR</span>
+    
+    </div>
+  </article>
+
+  <!-- Yoga 60 min -->
+  <article class="product">
+    <div class="card">
+      <img src="images/yoga60.png" alt="Yoga Class 60 minutes" >
+    </div>
+    <h3>Yoga Class 60 min</h3>
+    <p>
+      A full-body flow that combines movement and mindfulness — helping you improve flexibility, breathing, and overall calmness.
+    </p>
+    <div class="info">
+      <span class="price">40 SAR</span>
+    
+    </div>
+  </article>
+  
+  
+    </div>
+  </main>
+  
+  <footer class="site-footer">
+  <div class="contact-section">
+    <h3>Contact Us:</h3>
+
+    <div class="contact-info">
+      <div class="contact-row">
+        <img src="images/mail-removed.png" alt="Email icon">
+        <a href="mailto:forme@gmail.com">forme@gmail.com</a>
+      </div>
+
+      <div class="contact-row">
+        <img src="images/phone-removed.png" alt="Phone icon">
+        <a href="tel:+966556678127">+966 556678127</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="copyright">&copy; 2025 Formé. All rights reserved.</p>
+</footer>
+
+<script>
+
+window.onload = function() {
+  const catalog = document.querySelector('.catalog');
+  let products = Array.from(catalog.children); // list of all <article> elements
+
+  //  Randomize initial order
+  products.sort(() => Math.random() - 0.5);
+  products.forEach(p => catalog.appendChild(p));
+
+
+  document.getElementById('sort').value = "";
+
+
+  // Sorting function 
+  document.getElementById('sort').addEventListener('change', function() {
+    const value = this.value;
+
+    if (value === "name-az") {
+      products.sort(function(a, b) {
+        const nameA = a.querySelector("h3").textContent.toLowerCase();
+        const nameB = b.querySelector("h3").textContent.toLowerCase();
+        return nameA.localeCompare(nameB);
+      });
+    } 
+    else if (value === "name-za") {
+      products.sort(function(a, b) {
+        const nameA = a.querySelector("h3").textContent.toLowerCase();
+        const nameB = b.querySelector("h3").textContent.toLowerCase();
+        return nameB.localeCompare(nameA);
+      });
+    } 
+    else if (value === "price-low-high") {
+      products.sort(function(a, b) {
+        const priceA = parseInt(a.querySelector(".price").textContent);
+        const priceB = parseInt(b.querySelector(".price").textContent);
+        return priceA - priceB;
+      });
+    } 
+    else if (value === "price-high-low") {
+      products.sort(function(a, b) {
+        const priceA = parseInt(a.querySelector(".price").textContent);
+        const priceB = parseInt(b.querySelector(".price").textContent);
+        return priceB - priceA;
+      });
+    }
+
+    // Re-append elements to show the new order
+    products.forEach(p => catalog.appendChild(p));
+  });
+};
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

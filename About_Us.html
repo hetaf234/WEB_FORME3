@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Formé About Us Page</title>
+  <link rel="stylesheet" href="Style.css">
+    <script src="Script.js" defer></script>
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="top" class="site-header">
+    <div id="brand">
+      <img src="images/Logo.png" alt="Logo" width="150" height="150">
+      <h1 id="site-title">Formé</h1>
+    </div>
+
+    <nav id="navigation">
+      <ul>
+       <li><a href="home.html">Home</a></li>
+        <li><a href="Service_Providers_Dashboard.html">Service Provider’s Dashboard</a></li>
+        <li><a href="Customer_Dashboard.html">Customer’s Dashboard</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="About_Us.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <nav id="indicator"><a href="home.html">Home </a>&gt; About Us </nav>
+
+    <!-- Staff Section -->
+    <section class="staff-section">
+      <h2>About Us</h2>
+      <div class="staff-container">
+
+        <div class="staff-card">
+          <img src="images/girl1.jpeg" alt="staff1 pic">
+          <h3><a href="staff1.html">Sara Alqahtani</a></h3>
+          <p>Pilates coach focused on strength, flexibility, and posture improvement.</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="images/girl2.jpeg" alt="staff2 pic">
+          <h3><a href="staff2.html">Lina Al-Faisal</a></h3>
+          <p>Certified yoga instructor specializing in relaxation, breathing, and balance.</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="images/girl3.jpeg" alt="staff3 pic">
+          <h3><a href="staff3.html">Mona Al-Harbi</a></h3>
+          <p>Dance coach with experience in modern and traditional styles, teaching rhythm and coordination.</p>
+        </div>
+
+        <div class="staff-card">
+          <img src="images/girl4.jpeg" alt="staff4 pic">
+          <h3><a href="staff4.html">Asma Al-Dossary</a></h3>
+          <p>Wellness coach offering guidance in fitness, lifestyle, and personal health goals.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Join Our Team Form -->
+    <section class="join-team">
+      <h2>Join Our Team</h2>
+
+      <form class="form-card" name="teamForm" onsubmit="return validateForm()" method="post">
+
+        <div class="form-image-upload">
+          <img src="images/user-icon.png" alt="Avatar" width="100" height="100">
+
+          <div class="file-upload-box">
+            <input type="file" id="photo" name="profilePicture" accept="image/*">
+          </div>
+        </div>
+
+        <label>Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required >
+
+        <label>Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label>Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+        <label>Area of Expertise:</label>
+        <input type="text" id="expertise" name="expertise" placeholder="e.g. Yoga, Pilates, Dance" required>
+
+        <label>Skills:</label>
+        <input type="text" id="skills" name="skills" placeholder="List relevant skills..." required>
+
+        <label>Education:</label>
+        <input type="text" id="education" name="education" placeholder="Enter education background..." required>
+
+        <label>Message:</label>
+        <textarea id="message" name="message" rows="3" placeholder="Enter your massege..."></textarea>
+
+        <input type="submit" value="submit" class="btn-primary-full">
+
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="contact-section">
+      <h3>Contact Us:</h3>
+      <div class="contact-info">
+        <div class="contact-row">
+          <img src="images/mail-removed.png" alt="Email icon">
+          <a href="mailto:forme@gmail.com">forme@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <img src="images/phone-removed.png" alt="Phone icon">
+          <a href="tel:+966556678127">+966 556678127</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">&copy; 2025 Formé. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

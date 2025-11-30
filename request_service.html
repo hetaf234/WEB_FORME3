@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Formé Request Service Page</title>
+  <link rel="stylesheet" href="Style.css">
+   <script src="Script.js" defer ></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header id="top" class="site-header">
+
+    <div id="brand">
+      <img src="images/Logo.png" alt="Logo" width="150" height="150">
+      <h1 id="site-title">Formé</h1>
+    </div>
+
+    <nav id="navigation">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="Service_Providers_Dashboard.html">Service Provider’s Dashboard</a></li>
+        <li><a href="Customer_Dashboard.html">Customer’s Dashboard</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="About_Us.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="request-page">
+
+    <nav id="indicator">
+      <a href="home.html">Home </a> &gt;
+      <a href="Customer_Dashboard.html">Customer’s Dashboard </a> &gt; Request A Service
+    </nav>
+
+    <!-- MESSAGE BOX (new) -->
+    <div id="msgBox" class="message-box" style="display:none;"></div>
+
+    <section id="Req-Service">
+      <form class="form-card" action="#" method="post" novalidate>
+
+        <h2 style="text-align:center;">Request A Service</h2>
+
+        <div class="field">
+          <label for="service">Service:</label>
+          <select id="service" name="service" class="select-input">
+            <option value="" selected disabled>Select A Service</option>
+            <optgroup label="Dance">
+              <option value="dance-30">30 min — 15 SAR</option>
+              <option value="dance-60">60 min — 30 SAR</option>
+            </optgroup>
+            <optgroup label="Pilates">
+              <option value="pilates-45">45 min — 80 SAR</option>
+              <option value="pilates-90">90 min — 160 SAR</option>
+            </optgroup>
+            <optgroup label="Yoga">
+              <option value="yoga-30">30 min — 20 SAR</option>
+              <option value="yoga-60">60 min — 40 SAR</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate">
+
+        <label for="desc">Request Description:</label>
+        <textarea id="desc" rows="7"></textarea>
+
+        <div class="actions">
+          <input type="submit" value="Submit" class="btn-primary-full">
+        </div>
+
+      </form>
+    </section>
+
+    <section id="requestsContainer">
+      <h3>Requests you added in this visit:</h3>
+      <ul id="requestsList"></ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="contact-section">
+      <h3>Contact Us:</h3>
+
+      <div class="contact-info">
+        <div class="contact-row">
+          <img src="images/mail-removed.png">
+          <a href="mailto:forme@gmail.com">forme@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <img src="images/phone-removed.png">
+          <a href="tel:+966556678127">+966 556678127</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2025 Formé. All rights reserved.</p>
+  </footer>
+
+ 
+</body>
+
+</html>
