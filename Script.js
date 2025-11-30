@@ -278,6 +278,7 @@ if (evalSection) {
         boxId: "evalMsg",
         message: "We are Sorry! We'll use your feedback to improve.",
         showButtons: false
+		window.location.href = "Customer_Dashboard.html";
       });
     }
 
