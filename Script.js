@@ -281,7 +281,9 @@ if (evalSection) {
 		
       });
     }
-window.location.href = "Customer_Dashboard.html";
+setTimeout(() => {
+    window.location.href = "Customer_Dashboard.html";
+  }, 1500);
     evalForm.reset();
   });
 }
